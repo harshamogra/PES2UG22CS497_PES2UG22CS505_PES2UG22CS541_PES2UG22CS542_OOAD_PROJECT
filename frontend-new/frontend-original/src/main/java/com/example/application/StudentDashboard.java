@@ -106,6 +106,18 @@ public class StudentDashboard extends VerticalLayout {
                     card.add(new H3(courseName));
                     card.add(new Paragraph("👨‍🏫 Instructor: " + instructorName));
                     card.add(new Paragraph(description));
+
+                    // Add Take Test button
+                    Button takeTestButton = new Button("📝 Take Test");
+                    takeTestButton.getStyle()
+                        .set("background-color", "#8e44ad")
+                        .set("color", "white")
+                        .set("margin-top", "10px");
+                    Long courseId = ((Number) course.get("id")).longValue();
+                    takeTestButton.addClickListener(e -> {
+                        UI.getCurrent().navigate("take-test?courseId=" + courseId);
+                    });
+                    card.add(takeTestButton);
         
                     List<Map<String, Object>> modules = (List<Map<String, Object>>) course.get("modules");
                     if (modules != null && !modules.isEmpty()) {

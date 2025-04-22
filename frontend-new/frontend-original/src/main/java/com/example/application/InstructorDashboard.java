@@ -134,7 +134,7 @@ public class InstructorDashboard extends VerticalLayout {
             List<Map<String, Object>> courses = response.getBody();
 
             if (courses == null || courses.isEmpty()) {
-                container.add(new Paragraph("❌ You haven’t created any paid courses yet."));
+                container.add(new Paragraph("❌ You haven't created any paid courses yet."));
             } else {
                 for (Map<String, Object> course : courses) {
                     container.add(createCourseCard(course, container, instructorId));
@@ -265,7 +265,11 @@ public class InstructorDashboard extends VerticalLayout {
         addModuleBtn.getStyle().set("background-color", "#2980b9").set("color", "white");
         addModuleBtn.addClickListener(e -> UI.getCurrent().navigate("add-module?courseId=" + courseId));
 
-        buttons.add(editBtn, deleteBtn, addModuleBtn);
+        Button createAssessmentBtn = new Button("📝 Create Assessment");
+        createAssessmentBtn.getStyle().set("background-color", "#8e44ad").set("color", "white");
+        createAssessmentBtn.addClickListener(e -> UI.getCurrent().navigate("create-assessment?courseId=" + courseId));
+
+        buttons.add(editBtn, deleteBtn, addModuleBtn, createAssessmentBtn);
         card.add(buttons);
 
         return card;

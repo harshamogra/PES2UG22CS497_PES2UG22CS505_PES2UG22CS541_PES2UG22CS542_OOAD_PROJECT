@@ -76,7 +76,7 @@ public class PaymentSuccessPage extends VerticalLayout implements BeforeEnterObs
         details.getStyle().set("color", "#2980b9");
 
         Button viewCoursesButton = new Button("View My Courses", e -> 
-            UI.getCurrent().navigate("my-courses")
+            UI.getCurrent().navigate("student-dashboard")
         );
         viewCoursesButton.getStyle()
             .set("background-color", "#27ae60")

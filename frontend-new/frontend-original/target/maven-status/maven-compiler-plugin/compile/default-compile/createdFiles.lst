@@ -17,6 +17,8 @@ com\example\application\HomePage.class
 com\example\application\Application.class
 com\example\application\BuyPage$CheckoutResponse.class
 com\example\application\controller\UserController.class
+com\example\application\TakeTestView.class
+com\example\application\CreateAssessmentView.class
 com\example\application\PaymentFailedPage.class
 com\example\application\BuyPage.class
 com\example\application\UpdateModuleView.class
