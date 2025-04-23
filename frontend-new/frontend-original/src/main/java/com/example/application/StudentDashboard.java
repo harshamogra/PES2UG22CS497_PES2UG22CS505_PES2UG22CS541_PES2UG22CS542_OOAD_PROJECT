@@ -46,6 +46,15 @@ public class StudentDashboard extends VerticalLayout {
         welcomeMsg.getStyle().set("margin-top", "30px").set("color", "#333");
         add(welcomeMsg);
 
+        // Add feedback button here
+        Button feedbackButton = new Button("📝 Student Feedback", e -> UI.getCurrent().navigate("student-feedback"));
+        feedbackButton.getStyle()
+            .set("background-color", "#6610f2")
+            .set("color", "white")
+            .set("margin", "10px 0")
+            .set("padding", "10px");
+        add(feedbackButton);
+
         Button addCourseBtn = new Button("➕ Add Course");
         addCourseBtn.getStyle()
             .set("margin-top", "10px")
@@ -118,6 +127,18 @@ public class StudentDashboard extends VerticalLayout {
                         UI.getCurrent().navigate("take-test?courseId=" + courseId);
                     });
                     card.add(takeTestButton);
+                    
+                    // Add Review Course button
+                    Button reviewButton = new Button("⭐ Review Course");
+                    reviewButton.getStyle()
+                        .set("background-color", "#f39c12")
+                        .set("color", "white")
+                        .set("margin-top", "10px")
+                        .set("margin-left", "10px");
+                    reviewButton.addClickListener(e -> {
+                        UI.getCurrent().navigate("course-review?courseId=" + courseId);
+                    });
+                    card.add(reviewButton);
         
                     List<Map<String, Object>> modules = (List<Map<String, Object>>) course.get("modules");
                     if (modules != null && !modules.isEmpty()) {
@@ -288,4 +309,5 @@ public class StudentDashboard extends VerticalLayout {
         }
         return null;
     }
-}
+}  // Add this closing brace for the class
+

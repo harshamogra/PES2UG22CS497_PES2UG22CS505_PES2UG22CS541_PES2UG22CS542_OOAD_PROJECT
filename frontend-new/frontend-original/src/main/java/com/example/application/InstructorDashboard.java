@@ -35,6 +35,16 @@ public class InstructorDashboard extends VerticalLayout {
 
         add(mainHeading); 
 
+        // Add feedback button here
+        // In the constructor, after the welcomeMessage is created
+        Button feedbackButton = new Button("📋 Manage Student Feedback", e -> UI.getCurrent().navigate("instructor-feedback"));
+        feedbackButton.getStyle()
+            .set("background-color", "#6610f2")
+            .set("color", "white")
+            .set("margin", "10px 0")
+            .set("padding", "10px");
+        add(feedbackButton);
+
         HorizontalLayout header = new HorizontalLayout();
         header.setWidthFull();
         header.setJustifyContentMode(FlexComponent.JustifyContentMode.END);
@@ -269,6 +279,14 @@ public class InstructorDashboard extends VerticalLayout {
         createAssessmentBtn.getStyle().set("background-color", "#8e44ad").set("color", "white");
         createAssessmentBtn.addClickListener(e -> UI.getCurrent().navigate("create-assessment?courseId=" + courseId));
 
+        // In the createCourseCard method, add a button to view course reviews
+        // Add this to the buttons div, after the other buttons
+        
+        Button viewReviewsBtn = new Button("⭐ View Reviews");
+        viewReviewsBtn.getStyle().set("background-color", "#f39c12").set("color", "white");
+        viewReviewsBtn.addClickListener(e -> UI.getCurrent().navigate("course-reviews?courseId=" + courseId));
+        
+        buttons.add(viewReviewsBtn);
         buttons.add(editBtn, deleteBtn, addModuleBtn, createAssessmentBtn);
         card.add(buttons);
 
@@ -289,4 +307,4 @@ public class InstructorDashboard extends VerticalLayout {
         }
         return null;
     }
-}
+}  // Add this closing brace for the class
