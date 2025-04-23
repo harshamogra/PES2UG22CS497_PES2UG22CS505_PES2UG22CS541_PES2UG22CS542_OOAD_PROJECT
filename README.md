@@ -37,14 +37,14 @@ The backend server will start on `http://localhost:8000`
    cd frontend-new/frontend-original
    ```
 
-2. Compile the Java files:
+2. Build the project using Maven:
    ```bash
-   javac *.java
+   mvn clean install
    ```
 
 3. Run the application:
    ```bash
-   java StudentDashboard
+   mvn spring-boot:run
    ```
 
 The frontend application will be available at `http://localhost:3000`
