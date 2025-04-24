@@ -1,4 +1,4 @@
-# Student Management System
+# E-learning Platform
 
 This project is a E-learning Platform built using Java, implementing Object-Oriented Analysis and Design (OOAD) principles. The system consists of a Vaadin-based frontend application and a Spring Boot backend server with PostgreSQL database.
 
