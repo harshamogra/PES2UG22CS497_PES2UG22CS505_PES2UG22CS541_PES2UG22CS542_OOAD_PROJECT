@@ -1,6 +1,6 @@
 # E-learning Platform
 
-This project is a E-learning Platform built using Java, implementing Object-Oriented Analysis and Design (OOAD) principles. The system consists of a Vaadin-based frontend application and a Spring Boot backend server with PostgreSQL database.
+This project is an E-learning Platform built using Java, implementing Object-Oriented Analysis and Design (OOAD) principles. The system consists of a Vaadin-based frontend application and a Spring Boot backend server with PostgreSQL database.
 
 ## Prerequisites
 
@@ -23,7 +23,9 @@ This project is a E-learning Platform built using Java, implementing Object-Orie
    mvn clean install
    ```
 
-3. Run the Spring Boot application:
+3. **Before running the application, open `Backend-new/src/main/resources/application.properties` and add your own database username, password, and Stripe keys in place of the placeholders.**
+
+4. Run the Spring Boot application:
    ```bash
    mvn spring-boot:run
    ```
@@ -62,4 +64,3 @@ The project follows a client-server architecture:
 - Frontend: Vaadin-based web application running on port 3000
 - Backend: Spring Boot REST API running on port 8000
 - Database: PostgreSQL for data persistence
-
